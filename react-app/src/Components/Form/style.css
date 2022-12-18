@@ -11,6 +11,10 @@
     margin: 5px auto;
 }
 
+.red-input {
+    border: 1px solid red;
+}
+
 .form-heading {
     text-align: center;
 }
@@ -25,4 +29,8 @@
 .opacity {
     opacity: 0;
     visibility: hidden;
+}
+
+p {
+    height: 10px;
 }

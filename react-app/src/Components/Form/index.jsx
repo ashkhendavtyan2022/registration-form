@@ -147,12 +147,23 @@ class Form extends React.Component {
         
         if(!valid){
             this.setState({...this.state.error, error: error})
-        }
+        } 
 
+        if(valid) {
+            this.setState({
+                nameField: '',
+                passField: '',
+                confPassField: '',
+                emailField: '',
+                numberField: '',
+            })
+        }
 
         return valid
     }
    
+    
+
     render () {
 
         return (
@@ -161,9 +172,10 @@ class Form extends React.Component {
                     <h1 className="form-heading">Registration Form</h1>
 
                     <input 
-                        className="form-input" 
+                        className={`${this.state.error.nameError ? "red-input" : null} form-input`} 
                         type="text" name="nameField" 
                         placeholder="Name" 
+                        value={this.state.nameField}
                         onChange={this.handleChange}/>
 
                     <p className={`${!this.state.error.nameError ? "opacity" : ""} err-msg`}>
@@ -171,10 +183,11 @@ class Form extends React.Component {
                     </p>
 
                     <input 
-                        className="form-input" 
+                        className={`${this.state.error.nameError ? "red-input" : null} form-input`} 
                         type="password" 
                         name="passField" 
                         placeholder="Password" 
+                        value={this.state.passField}
                         onChange={this.handleChange}/>
 
                     <p className={`${!this.state.error.passError? "opacity" : ""} err-msg`}>
@@ -182,10 +195,11 @@ class Form extends React.Component {
                     </p>
                     
                     <input 
-                        className="form-input" 
+                        className={`${this.state.error.nameError ? "red-input" : null} form-input`} 
                         type="password" 
                         name="confPassField" 
-                        placeholder="Confirm Password" 
+                        placeholder="Confirm Password"
+                        value={this.state.confPassField} 
                         onChange={this.handleChange}/>
 
                     <p className={`${!this.state.error.confPassError ? "opacity" : ""} err-msg`}>
@@ -193,10 +207,11 @@ class Form extends React.Component {
                     </p>
 
                     <input 
-                        className="form-input" 
+                        className={`${this.state.error.nameError ? "red-input" : null} form-input`} 
                         type="email" 
                         name="emailField" 
                         placeholder="Email" 
+                        value={this.state.emailField} 
                         onChange={this.handleChange}/>
 
                     <p className={`${!this.state.error.emailError ? "opacity" : ""} err-msg`}>
@@ -204,10 +219,11 @@ class Form extends React.Component {
                     </p>
 
                     <input 
-                        className="form-input" 
+                        className={`${this.state.error.nameError ? "red-input" : null} form-input`} 
                         type="number" 
                         name="numberField" 
-                        placeholder="Number" 
+                        placeholder="Number"
+                        value={this.state.numberField}  
                         onChange={this.handleChange}/>
 
                     <p className={`${!this.state.error.numberError ? "opacity" : ""} err-msg`}>
