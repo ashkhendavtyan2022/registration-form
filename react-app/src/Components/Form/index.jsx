@@ -123,26 +123,41 @@ class Form extends React.Component {
         if(!this.state.nameField){
             error.nameError = "This Field is Required!"
             valid = false
+        } else {
+            error.nameError = ""
         }
+
         if(!this.state.passField){
             error.passError = "This Field is Required!"
             valid = false
+        } else {
+            error.passError = ""
         }
+
         if(!this.state.confPassField){
             error.confPassError = "This Field is Required!"
             valid = false
+        }else {
+            error.confPassError = ""
         }
+
         if(this.state.passField !== this.state.confPassField){
             error.confPassError = "Passwords are not the same!"
             valid = false
         }
+
         if(!this.state.emailField){
             error.emailError = "This Field is Required!"
             valid = false
+        }else {
+            error.emailError = ""
         }
+
         if(!this.state.numberField){
             error.numberError = "The Field is Required!"
             valid = false
+        }else {
+            error.numberError = ""
         }
         
         if(!valid){
